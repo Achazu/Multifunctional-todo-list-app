@@ -1,0 +1,41 @@
+.container__search {
+	background-color: $bcg-color-form;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	height: 60px;
+	position: relative;
+
+}
+
+.sort {
+	float: left;
+	font-size: $fnt-size-regular;
+	color: $fnt-color-form;
+	font-weight: $fnt-weight-regular;
+	padding: 0 0 0 15px;
+	display: inline-block;
+	cursor: pointer;
+	line-height: 60px;
+	
+}
+
+.fa {
+	color:$fnt-color-form;
+	font-size: 30px;
+}
+
+.search-box {
+	float: right;
+	height: 60%;
+	@include centerIt;
+	&__input {
+		width: 400px;
+		height: 100%;
+		@include input;
+		&::-webkit-input-placeholder {
+			color: $fnt-color-input;
+		} 
+	}
+}
+
+

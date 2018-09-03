@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Todo list</title>
+	<link href="https://fonts.googleapis.com/css?family=Merriweather:300,400,700,900&amp;subset=latin-ext" rel="stylesheet">
+	<link rel="stylesheet" href="./css/main.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+	<div class='container__main'>
+	<header>
+		<h1>Todos</h1>
+		<button id="change-style" class="btn">Choose style</button>
+	</header>
+
+	<section>
+		<form>
+			<div class="form__form-box form__form-box--txt">
+				<label class='form__label' for="title"> Enter title</label>
+				<input class='form__input' type="text" placeholder="Max length 60 characters" name='title' id="title" maxlength="60">
+			</div>
+
+			<div class="form__form-box-desc form__form-box--txt">
+				<label class='form__label' for="description"> Enter description</label>
+				<textarea class='form__input textarea' type="text" placeholder="Max length 140 characters" name='description' id="description" maxlength="140"></textarea>
+			</div>
+			<div class="form__form-box form__form-box--txt">
+				<label class='form__label' for="deadline"> Enter deadline</label>
+				<input class='form__input' type="date" placeholder="Enter deadline" name='deadline' id="deadline">
+			</div>
+
+			<div class="form__form-box form__select-box">
+				<label class='form__select-box--label' for="priority"> Choose priority</label>
+				<select class='form__select-box--select' name='priority' id="priority">
+					<option value='Please select priority' selected disabled>Please select priority</option>				
+					<option value='1'>1</option>
+					<option value='2'>2</option>
+					<option value='3'>3</option>
+					<option value='4'>4</option>
+					<option value='5'>5</option>
+				</select>
+			</div>
+
+			<div class="form_btn-box">
+				<button class="form__btn" id='add'>
+					<img class='add-icon' src="./icons/add_icon.svg" alt="add">
+				</button>
+			</div>
+		</form>
+	</section>
+	<section>
+		<div class="container__search">
+
+			<div class='search-box'>
+					<label class='search'><i class="fa fa-search" aria-hidden="true"></i></label>
+					<input type="text" class='search-box__input' id='searchData' placeholder="Search by title">
+			</div>
+
+			<div id='sortPriority' class='sort'> Sort by priority
+			</div>
+			<div id='sortDeadline' class='sort'> Sort by deadline
+			</div>
+			
+		</div>
+	</section>
+
+	<section>
+		<div class="container">
+			<ul class='todo' id='todo'></ul>
+
+			<ul class='todo' id='completed'></ul>
+
+		</div>
+	</section>
+	</div>
+	<script src="./js/main.js"></script>
+</body>
+
+</html>

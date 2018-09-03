@@ -1,0 +1,28 @@
+@mixin input {
+	// border-top-right-radius: 25px;
+	// border-bottom-right-radius: 25px;	
+	// border-top-left-radius: 5px;
+	// border-bottom-left-radius: 5px;	
+	color: $fnt-color-input;
+	background-color: $bcg-color-input;			
+	border-radius: 10px;
+	border: 0px;
+	box-shadow: none;
+	outline: none;
+	appearance: none; 
+}
+
+@mixin clearfix {
+	&::after{
+	content: '';
+	display: table;
+	clear: both;
+	}
+}
+
+@mixin centerIt {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
