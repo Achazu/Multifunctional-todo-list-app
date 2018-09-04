@@ -3,16 +3,14 @@
 }
 
 
- 
 form {
-	width: 100%;
-	/* position: fixed; */
+	display: none;
 	padding: 15px;
-	top: 0;
-	left: 0;
 	z-index: 5;
-	background-color: #25b99a;
-	box-shadow: 0px 2px 4px rgba(44, 62, 80, 0.15);
+} 
+
+.form {
+	@include styleVariable;
 }
 
 .form__form-box {
@@ -28,11 +26,11 @@ form {
 	padding: 5px;
 }
 
-.form__form-box::after {
-	content: "";
-    clear: both;
-    display: table;
-}
+// .form__form-box::after {
+// 	content: "";
+//     clear: both;
+//     display: table;
+// }
 
 .form__label {
 	width: 20%;
@@ -52,20 +50,38 @@ form {
 	/* margin: 10px;	 */
 	padding: 0 60px 0 0;
 	@include input;
-	font-size: 15px;
+	font-size: $fnt-size-small;
 	font-weight: 700;
 	color: rgba(255,255,255,0.75);
-	text-indent: 15px;	
+	padding-left: 15px;
 	height: 100%;		
+
+	&::-webkit-datetime-edit-month-field {
+		text-transform: uppercase;
+	}
+	&::-webkit-datetime-edit-day-field {
+		text-transform: uppercase;
+	}
+	&::-webkit-datetime-edit-year-field {
+		text-transform: uppercase;
+	}
+	&::-webkit-inner-spin-button {
+		height: 15px;
+	}
+	&::-webkit-calendar-picker-indicator {
+		font-size: 12px;
+		color: $fnt-color-input;
+	}
 }
 
 .form__input.textarea {
 	text-indent: 0;
 	padding-left: 15px;
+	padding-top: 5px;
 	color: rgba(255,255,255,0.75);
-	font-size: 15px;
+	font-size: $fnt-size-small;
 	font-weight: 700;
-	font-family: inherit;
+	font-family: 'Merriweather', serif;
 }
 
 
@@ -75,6 +91,7 @@ form input::-webkit-input-placeholder {
 textarea::-webkit-input-placeholder {
 	color: rgba(255,255,255,0.75);
 	line-height: 70px;
+	font-family: 'Merriweather', serif;
 } 
 
 
@@ -108,12 +125,12 @@ textarea::-webkit-input-placeholder {
 	height: 50px;
 	display: block;
 	text-align: center;
-	margin: 5px;
+	padding: 5px;
 } 
 
 .form__btn {
-	width: 50px;
-	height: 50px;
+	width: 45px;
+	height: 45px;
 	display: inline-block;
 	z-index: 2;
 	appearance: none;
@@ -122,15 +139,20 @@ textarea::-webkit-input-placeholder {
 	background-color: white;
 	box-shadow: none;
 	outline: none;
-	position: relative;
+	margin: 0 auto;
+	// position: relative;
 	cursor: pointer;
 }
 
-.add-icon {
-	height: 40%;
-	width: 40%;
-	position: absolute;
-	top: 50%;
-	left: 50%; 
-	transform: translate(-50%, -50%);
+.fa-plus{
+	color: red;
+	&-0{
+		color: $bcg-color-form-0;
+	}
+	&-1{
+		color: $bcg-color-form-1;
+	}
+	&-2{
+		color: $bcg-color-form-2;
+	}
 }

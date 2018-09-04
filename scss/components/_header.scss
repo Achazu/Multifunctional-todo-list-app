@@ -1,0 +1,63 @@
+.header__box {
+	background-color: $bcg-color-form;
+	height: 50px;
+	position: relative;
+
+	
+	&--text {
+		float: left;
+		display: inline-block;
+		width: 30%;
+		padding: 5px 0 0 15px;
+	}
+	@include styleVariable;
+	&--add {
+		@include centerIt;
+		display: inline-block;
+		font-family: $fnt-fam;
+		text-transform: uppercase;
+		font-size: $fnt-size-regular;
+		font-weight: $fnt-weight-regular;
+		background-color: $fnt-color-input;
+		color:$fnt-color-form;
+		width: 50%;
+		height: 80%;
+		border-radius: 25px;
+		cursor: pointer;
+
+	}
+	&--style {
+		float: right;
+		padding: 5px 15px 0 0;
+	}
+}
+
+.header__text {
+	display: inline-block;
+	padding: 0 10px 0 10px;
+	font-family: $fnt-fam;
+	text-transform: uppercase;
+	font-size: $fnt-size-regular;
+	color: $fnt-color-form;
+	&--add {
+		position: absolute;
+		transform: translate(120%, 50%)
+	}
+}
+
+
+.fa-angle-right{
+	float: right;
+	font-size: $fnt-size-regular;	
+	cursor: pointer;
+	
+}
+
+
+.fa-angle-left{
+	float: left;
+	font-size: $fnt-size-regular;	
+	cursor: pointer;
+	
+}
+

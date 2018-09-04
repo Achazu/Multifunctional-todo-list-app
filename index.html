@@ -9,17 +9,29 @@
 	<link href="https://fonts.googleapis.com/css?family=Merriweather:300,400,700,900&amp;subset=latin-ext" rel="stylesheet">
 	<link rel="stylesheet" href="./css/main.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 </head>
 
-<body>
+<body class='background-0'>
 	<div class='container__main'>
 	<header>
-		<h1>Todos</h1>
-		<button id="change-style" class="btn">Choose style</button>
+		<div class='header__box header__box-0' id='headerBox'>
+			<div class='header__box--text'>
+				<h1 class='header__text'>Todo list app</h1>
+			</div>
+			<div class='header__box--add' id="showForm">
+				<p class='header__text--add'>Add new task</p>
+			</div>
+			<div id="changeStyle" class='header__box--style'>
+				<i class="fa fa-angle-right" aria-hidden="true" id='nextStyle'></i>
+					<p class='header__text'>Choose style</p>
+				<i class="fa fa-angle-left" aria-hidden="true" id='previousStyle'></i>
+			</div>
+		</div>
 	</header>
 
 	<section>
-		<form>
+		<form id='formTable' class='form-0'>
 			<div class="form__form-box form__form-box--txt">
 				<label class='form__label' for="title"> Enter title</label>
 				<input class='form__input' type="text" placeholder="Max length 60 characters" name='title' id="title" maxlength="60">
@@ -27,7 +39,7 @@
 
 			<div class="form__form-box-desc form__form-box--txt">
 				<label class='form__label' for="description"> Enter description</label>
-				<textarea class='form__input textarea' type="text" placeholder="Max length 140 characters" name='description' id="description" maxlength="140"></textarea>
+				<textarea class='form__input textarea' type="text" placeholder="Max length 220 characters" name='description' id="description" maxlength="220"></textarea>
 			</div>
 			<div class="form__form-box form__form-box--txt">
 				<label class='form__label' for="deadline"> Enter deadline</label>
@@ -37,7 +49,7 @@
 			<div class="form__form-box form__select-box">
 				<label class='form__select-box--label' for="priority"> Choose priority</label>
 				<select class='form__select-box--select' name='priority' id="priority">
-					<option value='Please select priority' selected disabled>Please select priority</option>				
+					<option value='Please select priority' selected disabled>Select</option>				
 					<option value='1'>1</option>
 					<option value='2'>2</option>
 					<option value='3'>3</option>
@@ -46,15 +58,15 @@
 				</select>
 			</div>
 
-			<div class="form_btn-box">
+			<div class="form__btn-box">
 				<button class="form__btn" id='add'>
-					<img class='add-icon' src="./icons/add_icon.svg" alt="add">
+					<i class="fas fa-plus fa-2x fa-plus-0" aria-hidden="true" id='addIcon'></i>
 				</button>
 			</div>
 		</form>
 	</section>
 	<section>
-		<div class="container__search">
+		<div class="container__search container__search-0" id="container__search">
 
 			<div class='search-box'>
 					<label class='search'><i class="fa fa-search" aria-hidden="true"></i></label>

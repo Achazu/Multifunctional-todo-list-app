@@ -29,9 +29,52 @@
 	margin: 0;
 }
 
+.list__data-box{
+	float: left;
+	height: 100%;
+	display: block;
+	width: 15%;
+}
+
+.list__text-box{
+	display: block;
+	float: right;
+	width: 85%;
+	
+}
+
+.list {
+	&__title {
+		font-weight: $fnt-weight-heavy;
+		text-transform: capitalize;
+		font-family: $fnt-fam;
+		font-size: $fnt-size-regular;
+	}
+	&__desc{
+		font-weight: $fnt-weight-light;		
+		text-transform: capitalize;
+		font-family: $fnt-fam;				
+		font-size: $fnt-size-small;		
+		overflow-wrap: break-word;
+		word-wrap: break-word;
+		hyphens: auto;
+	}
+	&__deadline{
+		line-height: 50px;
+		font-size: $fnt-size-small;
+		font-weight: $fnt-weight-regular;		
+		font-family: $fnt-fam;
+	}
+	&__priority{
+		font-size: $fnt-size-small;
+		font-weight: $fnt-weight-regular;		
+		font-family: $fnt-fam;
+	}
+}
+
 .todo__buttons{
 	width: 100px;
-	height: 50px;
+	height: 100%;
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -77,32 +120,86 @@
 	transform: translate(-50%, -50%);
 }
 
-.todo__btn--complete svg {
+// .todo__btn--complete svg {
+// 	border-radius: 11px;
+// 	border: 1.5px solid #25b99a;
+// 	transition: background 0.9s ease;
+// }
+
+.todo__btn--complete-0 svg {
 	border-radius: 11px;
-	border: 1.5px solid #25b99a;
+	border: 1.5px solid $bcg-color-form-0;
 	transition: background 0.9s ease;
 }
+.todo__btn--complete-1 svg {
+	border-radius: 11px;
+	border: 1.5px solid $bcg-color-form-1;
+	transition: background 0.9s ease;
+}
+.todo__btn--complete-2 svg {
+	border-radius: 11px;
+	border: 1.5px solid $bcg-color-form-2;
+	transition: background 0.9s ease;
+}
+// .todo__btn--complete svg .fill{
+// 	fill: #25b99a;
+// }
 
-.todo__btn--complete svg .fill{
-	fill: #25b99a;
+.todo__btn--complete-0 svg .fill{
+	fill: $bcg-color-form-0;
+}
+
+.todo__btn--complete-1 svg .fill{
+	fill: $bcg-color-form-1;
+}
+
+.todo__btn--complete-2 svg .fill{
+	fill: $bcg-color-form-2;
 }
 
 .todo__btn--complete:hover svg .fill{
 	fill: white;
 }
 
-ul.todo#completed .todo__btn--complete svg {
+
+
+
+// ul.todo#completed .todo__btn--complete svg {
+// 	border-radius: 11px;
+// 	border: 1.5px solid #25b99a;
+// 	background-color: #25b99a;
+// }
+ul.todo#completed .todo__btn--complete-0 svg {
 	border-radius: 11px;
-	border: 1.5px solid #25b99a;
-	background-color: #25b99a;
+	border: 1.5px solid $bcg-color-form-0;
+	background-color: $bcg-color-form-0;
+}
+ul.todo#completed .todo__btn--complete-1 svg {
+	border-radius: 11px;
+	border: 1.5px solid $bcg-color-form-1;
+	background-color: $bcg-color-form-1;
+}
+ul.todo#completed .todo__btn--complete-2 svg {
+	border-radius: 11px;
+	border: 1.5px solid $bcg-color-form-2;
+	background-color: $bcg-color-form-2;
 }
 
 ul.todo#completed .todo__btn--complete svg .fill {
 	fill: white;
 }
 
-ul.todo:not(#completed) .todo__btn--complete:hover svg {
-	background-color: rgba(37,185,154,0.6);
+// ul.todo:not(#completed) .todo__btn--complete:hover svg {
+// 	background-color: rgba(37,185,154,0.6);
+// }
+ul.todo:not(#completed) .todo__btn--complete-0:hover svg {
+	background-color: $bcg-color-form-0;
+}
+ul.todo:not(#completed) .todo__btn--complete-1:hover svg {
+	background-color: $bcg-color-form-1;
+}
+ul.todo:not(#completed) .todo__btn--complete-2:hover svg {
+	background-color: $bcg-color-form-2;
 }
 
 .todo__btn--remove svg .fill{
@@ -133,7 +230,7 @@ ul.todo#completed:before {
 
 ul.todo:empty::after {
 	content: "Aren't you bored? Maybe some todos?";
-	margin: 15px;
+	margin-top: 15px;
 }
 
 ul.todo#completed:empty::after {

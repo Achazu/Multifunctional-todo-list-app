@@ -1,21 +1,25 @@
 .container__search {
-	background-color: $bcg-color-form;
 	border-bottom-right-radius: 10px;
 	border-bottom-left-radius: 10px;
 	height: 60px;
 	position: relative;
-
+	// background-color: $bcg-color-form-0;
+	// @include styleVariable;
+	// background-color: $bcg-color-form;
+	@include styleVariable;
+	
 }
 
 .sort {
 	float: left;
-	font-size: $fnt-size-regular;
+	font-size: $fnt-size-small;
 	color: $fnt-color-form;
 	font-weight: $fnt-weight-regular;
 	padding: 0 0 0 15px;
 	display: inline-block;
 	cursor: pointer;
 	line-height: 60px;
+	
 	
 }
 
@@ -32,6 +36,7 @@
 		width: 400px;
 		height: 100%;
 		@include input;
+		padding-left: 15px;
 		&::-webkit-input-placeholder {
 			color: $fnt-color-input;
 		} 

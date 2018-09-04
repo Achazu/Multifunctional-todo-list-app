@@ -1,16 +1,36 @@
+
+
 body {
 	box-sizing: border-box;
-	background-color: #edf0f1;
-	/* padding: 220px 0 0 0; */
 }
+
+.background{
+		&-0{
+			background-color: #edf0f1;
+		}
+		&-1{
+
+			background-image: linear-gradient(to left, #204d61, #5c8385, #a4baae);
+		}
+		&-2{
+			background-image: linear-gradient(to left, rgba(255,255,255,1) 0%, rgba(253,187,45,.51) 100%);
+		}
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		height: 150vh;
+		width: 100%;
+		display: block;
+}
+
 
 body, input, button {
 	font-family: 'Merriweather', serif;
-
 }
 
 .container__main{
 	width: 60%;
 	margin: 0 auto;
+	min-height: 120%;
+	margin-top: 10px; 
 }
 

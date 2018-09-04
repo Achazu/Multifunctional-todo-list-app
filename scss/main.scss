@@ -1,8 +1,10 @@
+@import 'abstracts/_mixins.scss';
+@import 'abstracts/_variables.scss';
+
 @import 'pages/_home.scss';
 @import 'base/_base.scss';
 @import 'base/_typography.scss';
-@import 'abstracts/_mixins.scss';
-@import 'abstracts/_variables.scss';
+
 @import 'utilities/_reset.scss';
 @import 'components/_form.scss';
 @import 'components/_header.scss';
