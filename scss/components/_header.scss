@@ -1,9 +1,8 @@
 .header__box {
-	background-color: $bcg-color-form;
 	height: 50px;
 	position: relative;
-
-	
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
 	&--text {
 		float: left;
 		display: inline-block;
@@ -39,25 +38,25 @@
 	text-transform: uppercase;
 	font-size: $fnt-size-regular;
 	color: $fnt-color-form;
+	
 	&--add {
-		position: absolute;
-		transform: translate(120%, 50%)
+	position: relative;
+	transform: translateY(25%);
+	text-align: center;
+	height: 100%;
+	vertical-align: base;
 	}
 }
-
 
 .fa-angle-right{
 	float: right;
 	font-size: $fnt-size-regular;	
-	cursor: pointer;
-	
+	cursor: pointer;	
 }
-
 
 .fa-angle-left{
 	float: left;
 	font-size: $fnt-size-regular;	
 	cursor: pointer;
-	
 }
 

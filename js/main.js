@@ -39,7 +39,6 @@ function render() {
 		var priority = data.todo[i].priority;
 		var GUID = data.todo[i].GUID;
 		addItemTodo(title, desc, date, priority, GUID);
-		console.log(this);
 	}
 	for (var j = 0; j < data.completed.length; j++) {
 		var title = data.completed[j].title;
@@ -50,6 +49,9 @@ function render() {
 		addItemTodo(title, desc, date, priority, GUID, true);
 	}
 	addClass(data.index)
+	for (var i = 0; i<completeButton.length; i++){
+		completeButton[i].className=`todo__btn todo__btn--complete todo__btn--complete-${data.index}`
+	}
 }
 
 // Remove, add, complete task functions
@@ -301,16 +303,19 @@ function clearInput(){
 
 /// Change styling
 
+function addClass(index){
+	body.className=`background-${index}`
+	form.className=`form-${index}`
+	searchContainer.className=`container__search container__search-${index}`
+	headerBox.className=`header__box header__box-${index}`;
+	addIcon.className=`fas fa-plus fa-2x fa-plus-${index}`;
+}
 
 function nextStyleFunction(){
 	
 	classIndex++;
 	data.index = classIndex%3;
-	body.className=`background-${classIndex%3}`;
-	form.className=`form-${classIndex%3}`;
-	searchContainer.className=`container__search container__search-${classIndex%3}`;
-	headerBox.className=`header__box header__box-${classIndex%3}`;
-	addIcon.className=`fas fa-plus fa-2x fa-plus-${classIndex%3}`;
+	addClass(classIndex%3)
 	for (var i = 0; i<completeButton.length; i++){
 		completeButton[i].classList.remove(`todo__btn--complete-${(classIndex-1)%3}`);		
 		completeButton[i].classList.add(`todo__btn`, `todo__btn--complete`, `todo__btn--complete-${classIndex%3}`);
@@ -323,30 +328,14 @@ function previousStyleFunction(){
 	classIndex--;
 	if(classIndex < 0) {
 		classIndex = 2;}
-	data.index = classIndex%3;
-	body.className=`background-${classIndex%3}`
-	form.className=`form-${classIndex%3}`
-	searchContainer.className=`container__search container__search-${classIndex%3}`
-	headerBox.className=`header__box header__box-${classIndex%3}`;
-	addIcon.className=`fas fa-plus fa-2x fa-plus-${classIndex%3}`;
+	// data.index = classIndex%3;
+	addClass(classIndex%3)
 	for (var i = 0; i<completeButton.length; i++){
 		completeButton[i].classList.remove(`todo__btn--complete-${(classIndex+1)%3}`);
 		completeButton[i].classList.add(`todo__btn`, `todo__btn--complete`, `todo__btn--complete-${classIndex%3}`);
 	}
 	updateDB()
 }
-
-function addClass(index){
-	body.className=`background-${index}`
-	form.className=`form-${index}`
-	searchContainer.className=`container__search container__search-${index}`
-	headerBox.className=`header__box header__box-${index}`;
-	addIcon.className=`fas fa-plus fa-2x fa-plus-${index}`;
-	for (var i = 0; i<completeButton.length; i++){
-		completeButton[i].className=`todo__btn todo__btn--complete todo__btn--complete-${index}`
-	}
-}
-
 ///////
 
 render()

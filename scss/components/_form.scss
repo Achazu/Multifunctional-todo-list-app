@@ -2,7 +2,6 @@
 	fill:none;
 }
 
-
 form {
 	display: none;
 	padding: 15px;
@@ -17,8 +16,8 @@ form {
 	width: 100%;
 	height: 40px;
 	padding: 5px;
+	transition: all 5s;
 }
-
 
 .form__form-box-desc {
 	width: 100%;
@@ -26,11 +25,10 @@ form {
 	padding: 5px;
 }
 
-// .form__form-box::after {
-// 	content: "";
-//     clear: both;
-//     display: table;
-// }
+.form__label-box{
+	// display: table;
+	// vertical-align: middle;
+}
 
 .form__label {
 	width: 20%;
@@ -40,8 +38,11 @@ form {
 	font-size: 15px;
 	font-weight: 700;
 	height: 100%;
-	display: inline-block;
 	vertical-align: middle;
+	font-family: $fnt-fam;
+	&--textarea{
+		line-height: 60px;
+	}
 }
 
 .form__input {
@@ -84,13 +85,12 @@ form {
 	font-family: 'Merriweather', serif;
 }
 
-
 form input::-webkit-input-placeholder {
 	color: rgba(255,255,255,0.75);
 } 
 textarea::-webkit-input-placeholder {
 	color: rgba(255,255,255,0.75);
-	line-height: 70px;
+	line-height: 60px;
 	font-family: 'Merriweather', serif;
 } 
 
@@ -98,6 +98,7 @@ textarea::-webkit-input-placeholder {
 .form__select-box{
 	text-align: center;
 	padding: 5px;
+	font-family: $fnt-fam;
 }
 
 .form__select-box--label{
@@ -117,8 +118,6 @@ textarea::-webkit-input-placeholder {
 	height: 100%;
 	width: 15%;
 }
-
-
 
 .form__btn-box {
 	width: 100%;
@@ -140,12 +139,10 @@ textarea::-webkit-input-placeholder {
 	box-shadow: none;
 	outline: none;
 	margin: 0 auto;
-	// position: relative;
 	cursor: pointer;
 }
 
 .fa-plus{
-	color: red;
 	&-0{
 		color: $bcg-color-form-0;
 	}
