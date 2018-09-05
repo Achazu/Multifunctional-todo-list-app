@@ -6,11 +6,10 @@ body {
 
 .background{
 		&-0{
-			background-color: #edf0f1;
+			background-image: linear-gradient(to left, #204d61, #5c8385, #a4baae);
 		}
 		&-1{
-
-			background-image: linear-gradient(to left, #204d61, #5c8385, #a4baae);
+			background-color: #edf0f1;
 		}
 		&-2{
 			background-image: linear-gradient(to left, rgba(255,255,255,1) 0%, rgba(171, 171, 0,.51) 100%);
